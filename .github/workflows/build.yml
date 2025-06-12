@@ -38,10 +38,10 @@ jobs:
         path: .\x64\Release\TrayIconApp.exe
         
     - name: Tworzenie taga z SHA ostatniego commit'a
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag v1.0.${{ github.run_number }}
-          git push origin v1.0.${{ github.run_number }}
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git tag v1.0.${{ github.run_number }}
+        git push origin v1.0.${{ github.run_number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
