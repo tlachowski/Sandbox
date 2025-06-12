@@ -1,18 +1,14 @@
-#run: D:\a\Sandbox\Sandbox\x64\Release\TrayIconApp.exe  # Zmień na ścieżkę do Twojego pliku testowego
-
 name: Budowanie i publikacja (Debug)
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 permissions:
-  contents: write  # Potrzebne do pushowania tagów i tworzenia release’a
+  contents: write
 
 jobs:
-  build-debug-release:
+  build-and-release:
     runs-on: windows-latest
 
     steps:
@@ -26,45 +22,24 @@ jobs:
       run: msbuild Sandbox.sln /p:Configuration=Debug
 
     - name: Uruchomienie testów
-      run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTests.exe --gtest_output=xml:test-results.xml
+      run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
 
-    - name: Publikacja wyników testów do CI
+    - name: Publikacja wyników testów jako artefakt CI
       uses: actions/upload-artifact@v4
       with:
         name: test-results-debug
         path: test-results.xml
 
-    - name: Publikacja .exe do CI
-      uses: actions/upload-artifact@v4
-      with:
-        name: TrayIconApp-debug
-        path: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconApp.exe
-
-    - name: Tworzenie taga
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git tag v1.0.${{ github.run_number }}
-        git push origin v1.0.${{ github.run_number }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Tworzenie GitHub Release
+    - name: Tworzenie release z .exe
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v1.0.${{ github.run_number }}
         name: Wydanie v1.0.${{ github.run_number }}
         body: |
           Automatyczne wydanie wygenerowane przez GitHub Actions.
-          Zawiera plik .exe oraz wyniki testów jednostkowych.
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Załącz .exe do Release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v1.0.${{ github.run_number }}
-        files: |
-          ./x64/Debug/TrayIconApp.exe
+          Zawiera plik TrayIconApp.exe oraz wynik testów.
+        files: ./x64/Debug/TrayIconApp.exe
+        draft: false
+        prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
