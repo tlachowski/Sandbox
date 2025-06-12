@@ -22,7 +22,7 @@ jobs:
       run: msbuild Sandbox.sln /p:Configuration=Debug
 
     - name: Uruchomienie testów
-      run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
+      run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTests.exe --gtest_output=xml:test-results.xml
 
     - name: Publikacja wyników testów jako artefakt CI
       uses: actions/upload-artifact@v4
