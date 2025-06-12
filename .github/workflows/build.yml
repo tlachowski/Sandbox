@@ -23,7 +23,7 @@ jobs:
       run: msbuild Sandbox.sln /p:Configuration=Release
 
     - name: Uruchomienie testów jednostkowych
-      run: D:\a\Sandbox\Sandbox\x64\Release\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
+      run: D:\a\Sandbox\Sandbox\x64\Release\TrayIconsAppTest.exe --gtest_output=xml:test-results.xml
 
     - name: Publikacja wyników testów
       uses: actions/upload-artifact@v4
