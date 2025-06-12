@@ -18,7 +18,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Budowanie projektu
-      run: msbuild RedButtonSolution.sln /p:Configuration=Release
+      run: msbuild TrayIconApp.sln /p:Configuration=Release
 
     - name: Uruchomienie testów
       run: .\bin\Release\testy.exe  # Zmień na ścieżkę do Twojego pliku testowego
