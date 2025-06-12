@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51B010DA-95C1-4A98-9F24-40CF5D2C20CD}|TrayIconsAppTest\\TrayIconsAppTest.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconsAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{51B010DA-95C1-4A98-9F24-40CF5D2C20CD}|TrayIconsAppTest\\TrayIconsAppTest.vcxproj|solutionrelative:TrayIconsAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC462AAF-235B-48C6-A26B-7AB1AB58F13A}|TrayIconAppTests\\TrayIconAppTests.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTests\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC462AAF-235B-48C6-A26B-7AB1AB58F13A}|TrayIconAppTests\\TrayIconAppTests.vcxproj|solutionrelative:TrayIconAppTests\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF39B9D7-26F2-4CA3-8163-F263810F51E8}|TrayIconApp\\TrayIconApp.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconApp\\TrayIconApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -44,13 +44,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "test.cpp",
-              "DocumentMoniker": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconsAppTest\\test.cpp",
-              "RelativeDocumentMoniker": "TrayIconsAppTest\\test.cpp",
-              "ToolTip": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconsAppTest\\test.cpp",
-              "RelativeToolTip": "TrayIconsAppTest\\test.cpp",
+              "DocumentMoniker": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTests\\test.cpp",
+              "RelativeDocumentMoniker": "TrayIconAppTests\\test.cpp",
+              "ToolTip": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTests\\test.cpp",
+              "RelativeToolTip": "TrayIconAppTests\\test.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-12T11:12:38.679Z",
+              "WhenOpened": "2025-06-12T11:32:51.321Z",
               "EditorCaption": ""
             },
             {
@@ -63,7 +63,8 @@
               "RelativeToolTip": "TrayIconApp\\TrayIconApp.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-12T09:15:30.629Z"
+              "WhenOpened": "2025-06-12T09:15:30.629Z",
+              "EditorCaption": ""
             }
           ]
         }
