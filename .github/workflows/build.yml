@@ -21,4 +21,4 @@ jobs:
       run: msbuild Sandbox.sln /p:Configuration=Release
 
     - name: Uruchomienie testów
-      run: .\bin\Release\testy.exe  # Zmień na ścieżkę do Twojego pliku testowego
+      run: run: D:\a\Sandbox\Sandbox\x64\Release\TrayIconApp.exe  # Zmień na ścieżkę do Twojego pliku testowego
