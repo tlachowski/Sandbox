@@ -25,7 +25,7 @@ jobs:
     - name: Uruchomienie testów jednostkowych
       run: D:\a\Sandbox\Sandbox\x64\Release\TrayIconAppTests.exe --gtest_output=xml:test-results.xml
 
-    - name: Publikacja wyników testów
+    - name: Publikac    ja wyników testów
       uses: actions/upload-artifact@v4
       with:
         name: test-results
@@ -36,3 +36,12 @@ jobs:
       with:
         name: TrayIconApp.exe
         path: .\x64\Release\TrayIconApp.exe
+        
+    - name: Tworzenie taga z SHA ostatniego commit'a
+        run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git tag v1.0.${{ github.run_number }}
+            git push origin v1.0.${{ github.run_number }}
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
