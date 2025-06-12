@@ -1,0 +1,24 @@
+name: Budowanie C++ na Windows
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Klonowanie repozytorium
+      uses: actions/checkout@v3
+
+    - name: Ustawienie środowiska MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Budowanie projektu
+      run: msbuild RedButtonSolution.sln /p:Configuration=Release
+
+    - name: Uruchomienie testów
+      run: .\bin\Release\testy.exe  # Zmień na ścieżkę do Twojego pliku testowego
