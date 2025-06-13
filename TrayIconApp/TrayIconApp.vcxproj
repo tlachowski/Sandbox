@@ -124,12 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="ISettingsReader.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TrayIconApp.h" />
+    <ClInclude Include="WindowsRegistrySettingsReader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ISettingsReader.cpp" />
     <ClCompile Include="TrayIconApp.cpp" />
+    <ClCompile Include="WindowsRegistrySettingsReader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TrayIconApp.rc" />
