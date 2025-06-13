@@ -56,3 +56,6 @@ jobs:
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Usuwanie testowego klucza rejestru (opcjonalne)
+      shell: pwsh
+      run: Remove-Item -Path "HKCU:\Software\TrayIconApp\TestConfig" -Recurse -Force -ErrorAction SilentlyContinue

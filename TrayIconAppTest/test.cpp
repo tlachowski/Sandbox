@@ -35,5 +35,5 @@ TEST(RegistryIntegrationTest, ReadsValueFromRegistry) {
     EXPECT_EQ(result, "1");
 
     // Cleanup
-    DeleteTestRegistryKey();
+    //DeleteTestRegistryKey();
 }
