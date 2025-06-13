@@ -2,6 +2,7 @@
 #include "ISettingsReader.h"
 #include <windows.h>
 #include <string>
+#include <iostream>
 
 class WindowsRegistrySettingsReader {
 public:
@@ -22,6 +23,7 @@ public:
         DWORD bufferSize = sizeof(buffer);
 
         LONG result = RegQueryValueExW(hKey, valueName.c_str(), nullptr, &type, buffer, &bufferSize);
+        std::cout << "Typ wartoœci z rejestru: " << type << std::endl;
         RegCloseKey(hKey);
 
         if (result != ERROR_SUCCESS)
