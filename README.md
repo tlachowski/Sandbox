@@ -1,0 +1,1 @@
+![Build Status](https://github.com/tlachowski/Sandbox/actions/workflows/build.yml/badge.svg)
