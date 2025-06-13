@@ -28,8 +28,10 @@ public:
 
         RegCloseKey(hKey);
 
+        std::wstring wvalue(buffer);
+
         if (type == REG_SZ) {
-            return std::string(std::wstring(buffer).begin(), std::wstring(buffer).end());
+            return std::string(wvalue.begin(), wvalue.end());
         }
 
         return "";

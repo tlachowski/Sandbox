@@ -30,6 +30,7 @@ TEST(RegistryIntegrationTest, ReadsValueFromRegistry) {
     WindowsRegistrySettingsReader reader(TEST_KEY_PATH);  // Zak³adamy, ¿e konstruktor przyjmuje œcie¿kê
     std::string result = reader.GetSetting(testKey);
 
+    std::cout << result << std::endl;
     // Assert
     EXPECT_EQ(result, "1");
 
