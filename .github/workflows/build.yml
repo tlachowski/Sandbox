@@ -20,6 +20,12 @@ jobs:
 
     - name: Budowanie (Debug)
       run: msbuild Sandbox.sln /p:Configuration=Debug
+    
+    - name: Upload Debug artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug-build
+        path: ./x64/Debug/
 
     - name: Uruchomienie testów
       run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
