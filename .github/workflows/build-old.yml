@@ -1,0 +1,85 @@
+name: Budowanie i publikacja (Debug)
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+    - name: Klonowanie repozytorium
+      uses: actions/checkout@v3
+
+    - name: Konfiguracja MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Budowanie (Debug)
+      run: msbuild Sandbox.sln /p:Configuration=Debug
+    
+    - name: Upload Debug artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug-build
+        path: ./x64/Debug/
+
+    - name: Uruchomienie testów
+      run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
+      continue-on-error: true
+    
+    - name: Podgląd zawartości klucza rejestru (HKCU)
+      shell: pwsh
+      run: |
+        $keyPath = "HKCU:\Software\TrayIconApp\TestConfig"
+        Write-Host "📍 Sprawdzanie klucza: $keyPath"
+
+        if (Test-Path $keyPath) {
+          Get-ItemProperty -Path $keyPath | Format-List | Out-String | Write-Host
+        } else {
+          Write-Host "❗ Klucz nie istnieje: $keyPath"
+        }
+        
+    - name: Publikacja wyników testów jako artefakt CI
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-debug
+        path: test-results.xml
+
+    - name: Tworzenie release z .exe
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v1.0.${{ github.run_number }}
+        name: Wydanie v1.0.${{ github.run_number }}
+        body: |
+          Automatyczne wydanie wygenerowane przez GitHub Actions.
+          Zawiera plik TrayIconApp.exe oraz wynik testów.
+        files: ./x64/Debug/TrayIconApp.exe
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Budowanie (Release)
+      run: msbuild Sandbox.sln /p:Configuration=Release
+
+    - name: Upload Release artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-build
+        path: ./x64/Release/
+
+    - name: Pakowanie wersji Release jako ZIP
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-build
+        path: |
+          ./x64/Release/
+
+    - name: Usuwanie testowego klucza rejestru (opcjonalne)
+      shell: pwsh
+      run: Remove-Item -Path "HKCU:\Software\TrayIconApp\TestConfig" -Recurse -Force -ErrorAction SilentlyContinue
