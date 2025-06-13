@@ -1,6 +1,39 @@
-﻿  TrayIconApp.cpp
+﻿  WindowsRegistrySettingsReader.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(4813,18): warning C4244: "=": konwersja z "wchar_t" do "char", możliwa utrata danych
+  (kompilowanie pliku źródłowego „WindowsRegistrySettingsReader.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(4813,18):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          D:\Users\tlachowski\OneDrive\Dokumenty\Programowanie\Windows\Sandbox\TrayIconApp\WindowsRegistrySettingsReader.h(32,31):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)” funkcji szablon
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+              D:\Users\tlachowski\OneDrive\Dokumenty\Programowanie\Windows\Sandbox\TrayIconApp\WindowsRegistrySettingsReader.h(32,13):
+              zobacz pierwsze odwołanie do elementu „std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string” w „WindowsRegistrySettingsReader::GetSetting”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(812,17):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)” funkcji szablon
+          with
+          [
+              _Size_type=std::+::_Size_type,
+              _Iter=wchar_t *,
+              _Sent=wchar_t *,
+              _Size=std::+::_Size_type
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(968,18):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)” funkcji szablon
+          with
+          [
+              _OutIt=char *,
+              _Size=std::+::_Size_type,
+              _InIt=wchar_t *,
+              _SizeTy=std::+::_Size_type
+          ]
+  
   Trwa generowanie kodu
-  Previous IPDB not found, fall back to full compilation.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
   All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Zakończono generowanie kodu
   TrayIconApp.vcxproj -> D:\Users\tlachowski\OneDrive\Dokumenty\Programowanie\Windows\Sandbox\x64\Release\TrayIconApp.exe

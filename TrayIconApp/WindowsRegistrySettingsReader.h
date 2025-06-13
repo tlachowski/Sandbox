@@ -1,12 +1,41 @@
 #pragma once
 #include "ISettingsReader.h"
-class WindowsRegistrySettingsReader :
-    public ISettingsReader
-{
+#include <windows.h>
+#include <string>
+
+class WindowsRegistrySettingsReader {
 public:
-    std::string GetSetting(const std::wstring& key) override {
-        // u¿yj RegOpenKeyEx, RegQueryValueEx itd.
-        return "wartoœæ"; // uproszczony przyk³ad
+    explicit WindowsRegistrySettingsReader(const std::wstring& subKeyPath)
+        : registryPath(subKeyPath) {
     }
+
+    std::string GetSetting(const std::wstring& valueName) const {
+        HKEY hKey;
+        std::wstring fullPath = L"Software\\" + registryPath;
+
+        if (RegOpenKeyExW(HKEY_CURRENT_USER, fullPath.c_str(), 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
+            return "";
+        }
+
+        wchar_t buffer[256];
+        DWORD bufferSize = sizeof(buffer);
+        DWORD type = 0;
+
+        if (RegQueryValueExW(hKey, valueName.c_str(), nullptr, &type, reinterpret_cast<LPBYTE>(&buffer), &bufferSize) != ERROR_SUCCESS) {
+            RegCloseKey(hKey);
+            return "";
+        }
+
+        RegCloseKey(hKey);
+
+        if (type == REG_SZ) {
+            return std::string(std::wstring(buffer).begin(), std::wstring(buffer).end());
+        }
+
+        return "";
+    }
+
+private:
+    std::wstring registryPath;
 };
 
