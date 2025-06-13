@@ -51,6 +51,18 @@ jobs:
       with:
         name: test-results-debug
         path: test-results.xml
+        
+    - name: Analiza wyników testów XML
+      shell: pwsh
+      run: |
+        [xml]$xml = Get-Content test-results.xml
+        $failed = $xml.testsuites.testsuite.failures
+        if ($failed -gt 0) {
+          Write-Host "::error::Wykryto niepowodzenia testów: $failed"
+          exit 1
+        } else {
+          Write-Host "✅ Wszystkie testy zakończone sukcesem"
+        }
 
     # RELEASE BUILD
     - name: Budowanie (Release)
@@ -89,7 +101,7 @@ jobs:
           TrayIconApp_Debug.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    
     # CLEANUP
     - name: Usuwanie testowego klucza rejestru (opcjonalne)
       shell: pwsh
