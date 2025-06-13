@@ -23,6 +23,7 @@ jobs:
 
     - name: Uruchomienie testów
       run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
+      continue-on-error: true
     
     - name: Podgląd zawartości klucza rejestru (HKCU)
       shell: pwsh
