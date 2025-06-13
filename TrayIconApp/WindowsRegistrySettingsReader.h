@@ -10,7 +10,7 @@ public:
 
     std::string GetSetting(const std::wstring& valueName) const {
         HKEY hKey;
-        std::wstring fullPath = L"Software\\" + registryPath;
+        std::wstring fullPath = registryPath;           // L"Software\\" + 
 
         LONG openStatus = RegOpenKeyExW(HKEY_CURRENT_USER, fullPath.c_str(), 0, KEY_READ, &hKey);
         if (openStatus != ERROR_SUCCESS) {
