@@ -17,21 +17,23 @@ public:
             return "";
         }
 
-        wchar_t buffer[256];
-        DWORD bufferSize = sizeof(buffer);
         DWORD type = 0;
+        BYTE buffer[256];
+        DWORD bufferSize = sizeof(buffer);
 
-        if (RegQueryValueExW(hKey, valueName.c_str(), nullptr, &type, reinterpret_cast<LPBYTE>(&buffer), &bufferSize) != ERROR_SUCCESS) {
-            RegCloseKey(hKey);
-            return "";
-        }
-
+        LONG result = RegQueryValueExW(hKey, valueName.c_str(), nullptr, &type, buffer, &bufferSize);
         RegCloseKey(hKey);
 
-        std::wstring wvalue(buffer);
+        if (result != ERROR_SUCCESS)
+            return "";
 
         if (type == REG_SZ) {
-            return std::string(wvalue.begin(), wvalue.end());
+            std::wstring wval(reinterpret_cast<wchar_t*>(buffer));
+            return std::string(wval.begin(), wval.end());
+        }
+        else if (type == REG_DWORD && bufferSize == sizeof(DWORD)) {
+            DWORD dwVal = *reinterpret_cast<DWORD*>(buffer);
+            return std::to_string(dwVal);
         }
 
         return "";

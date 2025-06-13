@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06A94986-ACCF-4D55-AC70-6D4F38230565}|TrayIconAppTest\\TrayIconAppTest.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{06A94986-ACCF-4D55-AC70-6D4F38230565}|TrayIconAppTest\\TrayIconAppTest.vcxproj|solutionrelative:TrayIconAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF39B9D7-26F2-4CA3-8163-F263810F51E8}|TrayIconApp\\TrayIconApp.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconApp\\WindowsRegistrySettingsReader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF39B9D7-26F2-4CA3-8163-F263810F51E8}|TrayIconApp\\TrayIconApp.vcxproj|solutionrelative:TrayIconApp\\WindowsRegistrySettingsReader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06A94986-ACCF-4D55-AC70-6D4F38230565}|TrayIconAppTest\\TrayIconAppTest.vcxproj|D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{06A94986-ACCF-4D55-AC70-6D4F38230565}|TrayIconAppTest\\TrayIconAppTest.vcxproj|solutionrelative:TrayIconAppTest\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,28 +42,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "test.cpp",
               "DocumentMoniker": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTest\\test.cpp",
               "RelativeDocumentMoniker": "TrayIconAppTest\\test.cpp",
               "ToolTip": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconAppTest\\test.cpp",
               "RelativeToolTip": "TrayIconAppTest\\test.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-13T08:16:53.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "WindowsRegistrySettingsReader.h",
               "DocumentMoniker": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconApp\\WindowsRegistrySettingsReader.h",
               "RelativeDocumentMoniker": "TrayIconApp\\WindowsRegistrySettingsReader.h",
               "ToolTip": "D:\\Users\\tlachowski\\OneDrive\\Dokumenty\\Programowanie\\Windows\\Sandbox\\TrayIconApp\\WindowsRegistrySettingsReader.h",
               "RelativeToolTip": "TrayIconApp\\WindowsRegistrySettingsReader.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-13T07:54:51.171Z"
+              "WhenOpened": "2025-06-13T07:54:51.171Z",
+              "EditorCaption": ""
             }
           ]
         }
