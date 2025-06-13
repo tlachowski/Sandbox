@@ -23,7 +23,19 @@ jobs:
 
     - name: Uruchomienie testów
       run: D:\a\Sandbox\Sandbox\x64\Debug\TrayIconAppTest.exe --gtest_output=xml:test-results.xml
+    
+    - name: Podgląd zawartości klucza rejestru (HKCU)
+      shell: pwsh
+      run: |
+        $keyPath = "HKCU:\Software\TrayIconApp\TestConfig"
+        Write-Host "📍 Sprawdzanie klucza: $keyPath"
 
+        if (Test-Path $keyPath) {
+          Get-ItemProperty -Path $keyPath | Format-List | Out-String | Write-Host
+        } else {
+          Write-Host "❗ Klucz nie istnieje: $keyPath"
+        }
+        
     - name: Publikacja wyników testów jako artefakt CI
       uses: actions/upload-artifact@v4
       with:
